@@ -10,7 +10,7 @@ export const ALL_ACTIVIDADES = "ALL_ACTIVIDADES"
 
 export function AllCountries() {
   return function (dispatch) {
-    fetch("http://localhost:3001/countries")
+    fetch("https://app-country-2021.herokuapp.com/countries")
       .then((res) => res.json())
       .then((data) => {
         dispatch({ type: ALL_COUNTRIES, payload: data });
@@ -29,7 +29,7 @@ export function AllCountries() {
 }
 export function AllActividades (){
   return function (dispatch) {
-    fetch("http://localhost:3001/actividades")
+    fetch("https://app-country-2021.herokuapp.com/actividades")
       .then((res) => res.json())
       .then((data) => {
           dispatch({ type: ALL_ACTIVIDADES, payload: data})
@@ -40,7 +40,7 @@ export function AllActividades (){
 
 export function GetCountry (idPais) {
   return function(dispatch){
-    fetch(`http://localhost:3001/countriesData/${idPais}`)
+    fetch(`https://app-country-2021.herokuapp.com/countriesData/${idPais}`)
       .then((res) => res.json())
       .then((data) =>{
         dispatch({type: GET_COUNTRY, payload: data})
@@ -51,7 +51,7 @@ export function GetCountry (idPais) {
 
 export function PostActivity(payload){
   return async function(){
-    const response = await axios.post("http://localhost:3001/activity", payload);
+    const response = await axios.post("https://app-country-2021.herokuapp.com/activity", payload);
 
     return response
   }
@@ -85,7 +85,7 @@ export function filtrarPorPoblacion(payload){
 
 export function BuscarPorNombre (name) {
   return function(dispatch){
-    fetch(`http://localhost:3001/countriesData?name=${name}`)
+    fetch(`https://app-country-2021.herokuapp.com/countriesData?name=${name}`)
       .then((res) => res.json())
       .then((data) =>{
         dispatch({type: BUSCAR_NOMBRE, payload: data})
