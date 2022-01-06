@@ -1,0 +1,10 @@
+.imagenLanding{
+    display: flex;
+    float: left;
+}
+.bienvenidos{
+    display: block;
+    font-size: 50px;
+    
+}
+
